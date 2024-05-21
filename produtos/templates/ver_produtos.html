@@ -4,5 +4,10 @@
 
 {% block content %}
   <h1>Ver Produtos</h1>
+
+  {% for item in produtos %}
+    <p>{{ item.nome }} - {{ item.tipo }}</p>
+  {% endfor %}
+
 {% endblock %}
 
