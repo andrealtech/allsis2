@@ -4,10 +4,30 @@
 
 {% block content %}
   <h1>Ver Produtos</h1>
-
-  {% for item in produtos %}
-    <p>{{ item.nome }} - {{ item.tipo }}</p>
-  {% endfor %}
-
+  <br>
+  <form action="" method="get">
+    <div class="col-md-6">
+      <input type="text" name="search" class="form-control" placeholder="Pesquisar">
+      <br>
+      <input type="submit" value="Buscar" class="btn btn-primary">
+    </div>    
+  </form>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome do Produto</th>
+        <th scope="col">Tipo do Produto</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in produtos %}
+        <tr>
+          <th scope="row">{{ item.nome }}</th>
+          <td>{{ item.tipo }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
 
