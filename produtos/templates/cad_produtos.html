@@ -3,8 +3,18 @@
 {% block title %} Cad Produtos {% endblock %}
 
 {% block content %}
-  <h1>Cadastro de produtos</h1>
-  <input class="form-control" type="text" value="Digitar o nome do produto aqui..." aria-label="readonly input example" readonly>
-  <button type="button" class="btn btn-primary">Cadastrar</button>
+  <h1>Cadastro de Produtos</h1>
+  
+  <h2>Para cadastrar um novo tipo, <a href="{% url 'cad_tipos' %}"> clique aqui</a></h2>
+  
+  <form method="post">
+    {% csrf_token %}
+    <table>      
+      {{ new_produtos.as_table }}       
+    </table>
+
+    <input type="submit" value="Cadastrar" class="btn btn-primary">
+    
+  </form>
 {% endblock %}
 
